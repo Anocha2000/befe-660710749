@@ -19,6 +19,7 @@ type Student struct {
 var students = []Student{
 	{ID: "1", Name: "John Doe", Email: "john@example.com", Year: 3, GPA: 3.50},
 	{ID: "2", Name: "Jane Smith", Email: "jane@example.com", Year: 2, GPA: 3.75},
+	
 }
 func getStudents(c *gin.Context) {
 	yearQuery := c.Query("Year")
@@ -53,7 +54,7 @@ func main() {
 func main() {
 	r := gin.Default()
 	r.GET("/health", func(c *gin.Context) {
-		c.JSON(200, gin.H{"massage": "healthy"})
+		c.JSON(200, gin.H{"message": "healthy"})
 	})
 	r.Run(":8080")
 }
