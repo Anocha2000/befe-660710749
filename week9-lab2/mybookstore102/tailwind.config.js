@@ -11,6 +11,7 @@ module.exports = {
         viridian: {
           600: "#40826D",
         },
+
       },
       fontFamily: {
         'sans': ['Prompt', 'sans-serif'],
