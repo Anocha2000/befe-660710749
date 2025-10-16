@@ -170,10 +170,10 @@ func createBook(c *gin.Context) {
 	var createdAt, updatedAt time.Time
 
 	err := db.QueryRow(
-		`INSERT INTO books (title, author, isbn, year, price)
-         VALUES ($1, $2, $3, $4, $5)
+		`INSERT INTO books (title, author, isbn, year, price,is_new)
+         VALUES ($1, $2, $3, $4, $5, $6)
          RETURNING id, created_at, updated_at`,
-		newBook.Title, newBook.Author, newBook.ISBN, newBook.Year, newBook.Price,
+		newBook.Title, newBook.Author, newBook.ISBN, newBook.Year, newBook.Price,true,
 	).Scan(&id, &createdAt, &updatedAt)
 
 	if err != nil {
